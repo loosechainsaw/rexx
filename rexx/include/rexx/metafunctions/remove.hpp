@@ -15,12 +15,12 @@ namespace rexx::metafunctions {
 
     template<typename T, typename... Ts, typename R>
     struct remove<std::tuple<T, Ts...>, R> {
-        using type = typename prepend<T, typename remove<Ts..., R>::type>::type;
+        using type = typename prepend<typename remove<std::tuple<Ts...>, R>::type, T>::type;
     };
 
     template<typename T, typename... Ts>
     struct remove<std::tuple<T, Ts...>, T> {
-        using type = typename remove<Ts..., T>::type;
+        using type = typename remove<std::tuple<Ts...>, T>::type;
     };
 }
 

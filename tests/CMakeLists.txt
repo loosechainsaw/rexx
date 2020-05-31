@@ -5,7 +5,9 @@ set(SOURCES
         source/main.cpp
         source/any_of_tests.cpp
         source/all_of_tests.cpp
-        source/prepend_tests.cpp source/append_tests.cpp)
+        source/prepend_tests.cpp
+        source/append_tests.cpp
+        source/remove_tests.cpp)
 
 add_executable(tests ${SOURCES})
 set_target_properties(tests PROPERTIES
