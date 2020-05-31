@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(rexx)
 set(HEADERS
         include/rexx/utility/compile_time_type_printer.hpp
+        include/rexx/utility/null_type.hpp
         include/rexx/metafunctions/front.hpp
         include/rexx/metafunctions/back.hpp
         include/rexx/metafunctions/append.hpp

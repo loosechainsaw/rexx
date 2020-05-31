@@ -2,6 +2,7 @@
 #define REXX_REXX_HPP
 
 #include <rexx/utility/compile_time_type_printer.hpp>
+#include <rexx/utility/null_type.hpp>
 #include <rexx/metafunctions/append.hpp>
 #include <rexx/metafunctions/prepend.hpp>
 #include <rexx/metafunctions/front.hpp>
