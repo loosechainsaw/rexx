@@ -16,7 +16,7 @@ set(HEADERS
         include/rexx/metafunctions/none_of.hpp
         include/rexx/metafunctions/fill_n.hpp
         include/rexx/metafunctions/remove.hpp
-        include/rexx/metafunctions/remove_if.h
+        include/rexx/metafunctions/remove_if.hpp
         include/rexx/metafunctions/concat.hpp
         include/rexx/rexx.hpp)
 add_library(${CMAKE_PROJECT_NAME} INTERFACE)

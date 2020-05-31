@@ -16,5 +16,6 @@
 #include <rexx/metafunctions/none_of.hpp>
 #include <rexx/metafunctions/fill_n.hpp>
 #include <rexx/metafunctions/remove.hpp>
+#include <rexx/metafunctions/remove_if.hpp>
 
 #endif

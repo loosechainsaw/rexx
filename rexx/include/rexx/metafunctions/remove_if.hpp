@@ -19,7 +19,7 @@ namespace rexx::metafunctions {
         struct remove_if<std::tuple<T, Ts...>, P> {
             using type = typename std::conditional<P<T>::value,
                                                    typename detail::remove_if<std::tuple<Ts...>, P>::type,
-                                                   typename prepend<T, typename detail::remove_if<std::tuple<Ts...>, P>::type>::type>::type;
+                                                   typename prepend<typename detail::remove_if<std::tuple<Ts...>, P>::type, T>::type>::type;
         };
     }
 

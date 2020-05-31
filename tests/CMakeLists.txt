@@ -12,7 +12,7 @@ set(SOURCES
         source/skip_tests.cpp
         source/front_tests.cpp
         source/back_tests.cpp
-        )
+        source/concat_tests.cpp source/remove_if_tests.cpp)
 
 add_executable(tests ${SOURCES})
 set_target_properties(tests PROPERTIES
