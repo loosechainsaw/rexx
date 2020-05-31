@@ -18,4 +18,6 @@
 #include <rexx/metafunctions/remove.hpp>
 #include <rexx/metafunctions/remove_if.hpp>
 
+#include <rexx/constexpr/front.hpp>
+
 #endif

@@ -18,6 +18,8 @@ set(HEADERS
         include/rexx/metafunctions/remove.hpp
         include/rexx/metafunctions/remove_if.hpp
         include/rexx/metafunctions/concat.hpp
+
+        include/rexx/constexpr/front.hpp
         include/rexx/rexx.hpp)
 add_library(${CMAKE_PROJECT_NAME} INTERFACE)
 target_include_directories(${CMAKE_PROJECT_NAME}
