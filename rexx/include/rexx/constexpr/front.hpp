@@ -1,38 +1,26 @@
-#ifndef REXX_FRONT_HPP
-#define REXX_FRONT_HPP
+#ifndef REXX_CONSTEXPR_FRONT_HPP
+#define REXX_CONSTEXPR_FRONT_HPP
 
 #include <type_traits>
-#include <tuple>
 
 namespace rexx::cexpr {
 
-    namespace detail {
+    template<typename T>
+    using front_result_type =
+            typename std::conditional<std::is_lvalue_reference_v<T>,
+                                      decltype(std::get<0>(std::declval<T>())),
+                                      std::remove_reference_t<decltype(std::get<0>(std::declval<T>()))>>::type;
 
-        template<typename T, typename... Ts>
-        constexpr T& front_impl(std::tuple<T, Ts...> &t)
-        {
-            return std::get<0>(t);
-        }
+    template<typename T>
+    static constexpr bool front_result_noexcept =
+            std::is_lvalue_reference_v<T> ?
+                 true :
+                 std::is_nothrow_move_constructible_v<std::remove_reference_t<decltype(std::get<0>(std::declval<T>()))>>;
 
-        template<typename T, typename... Ts>
-        constexpr T const &front_impl(std::tuple<T, Ts...> const &t)
-        {
-            return std::get<0>(t);
-        }
-
-        template<typename T, typename... Ts>
-        constexpr T front_impl(std::tuple<T, Ts...> &&t)
-        {
-            return std::get<0>(t);
-        }
+    template<typename T>
+    constexpr auto front(T&& tuple) noexcept(front_result_noexcept<T>) -> front_result_type<T> {
+        return std::get<0>(tuple);
     }
-
-    template<typename TTuple>
-    constexpr decltype(auto) front(TTuple &&t)
-    {
-        return detail::front_impl(std::forward<TTuple>(t));
-    }
-
 
 }
 

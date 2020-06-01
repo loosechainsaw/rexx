@@ -14,9 +14,8 @@ set(SOURCES
         source/metafunctions/back_tests.cpp
         source/metafunctions/concat_tests.cpp
         source/metafunctions/remove_if_tests.cpp
-
         source/constexpr/front.cpp
-
+        source/constexpr/back.cpp
         )
 set(COMPILER_OPTIONS)
 set(LINKER_OPTIONS)
